@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">In search of fish</string>
+    <string name="name_1">Логин</string>
+    <string name="name_2">Пароль</string>
+    <string name="lake_1">Бобровое</string>
+    <string name="lake_2">Песчаное</string>
+    <string name="lake_3">Паршино</string>
+    <string name="lake_ru">озеро</string>
+    <string name="river_ru">река</string>
+    <string name="text_hello">Hello User!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

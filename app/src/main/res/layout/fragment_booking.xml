@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/booking" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="255dp"
+            android:layout_height="91dp"
+            android:layout_toEndOf="@id/imageView"
+            android:gravity="center"
+            android:text="Бронирование"
+            android:textSize="@dimen/title_text_size_1" />
+        <ImageView
+            android:id="@+id/imageRiver"
+            android:layout_width="215sp"
+            android:layout_height="140sp"
+            android:layout_below="@id/imageView"
+            app:srcCompat="@drawable/main_river" />
+        <ImageView
+            android:id="@+id/imageLake"
+            android:layout_width="215dp"
+            android:layout_height="140dp"
+            android:layout_below="@id/imageRiver"
+            app:srcCompat="@drawable/main_lake" />
+        <Button
+            android:id="@+id/buttonRiver"
+            android:layout_width="48sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/button_start_end_offset"
+            android:layout_marginTop="@dimen/button_top_offset_1"
+            android:layout_marginEnd="@dimen/button_start_end_offset"
+            android:layout_toEndOf="@id/imageRiver"
+            android:text="@string/river_ru"
+            android:textSize="@dimen/button_text_size" />
+        <Button
+            android:id="@+id/buttonLake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonRiver"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/button_start_end_offset"
+            android:layout_marginTop="@dimen/button_top_offset_2"
+            android:layout_marginEnd="@dimen/button_start_end_offset"
+            android:layout_toEndOf="@id/imageLake"
+            android:text="@string/lake_ru"
+            android:textSize="@dimen/button_text_size" />
+        <TextView
+            android:id="@+id/textViewCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="30dp"
+            android:text="Корзина: "
+            android:textSize="@dimen/title_text_size_1" />
+        <TextView
+            android:id="@+id/textViewContent"
+            android:layout_width="307dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@id/textViewCart"
+            android:text="пусто"
+            android:textSize="@dimen/title_text_size_1" />
+    </RelativeLayout>
+</FrameLayout>

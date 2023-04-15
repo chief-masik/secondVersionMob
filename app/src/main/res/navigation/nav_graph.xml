@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authenticationFragment">
+
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.example.secondversion5pr.AuthenticationFragment"
+        android:label="fragment_authentication"
+        tools:layout="@layout/fragment_authentication" >
+        <action
+            android:id="@+id/action_authenticationFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.example.secondversion5pr.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_bookingFragment_to_lakesFragment2"
+            app:destination="@id/lakesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lakesFragment"
+        android:name="com.example.secondversion5pr.LakesFragment"
+        android:label="fragment_lakes"
+        tools:layout="@layout/fragment_lakes" >
+        <action
+            android:id="@+id/action_lakesFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+</navigation>
