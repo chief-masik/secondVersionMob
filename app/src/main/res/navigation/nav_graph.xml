@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="com.example.secondversion5pr.AuthenticationFragment"
+        android:name="com.example.secondversion5pr.ui.fragment.AuthenticationFragment"
         android:label="fragment_authentication"
         tools:layout="@layout/fragment_authentication" >
         <action
@@ -16,20 +16,32 @@
     </fragment>
     <fragment
         android:id="@+id/bookingFragment"
-        android:name="com.example.secondversion5pr.BookingFragment"
+        android:name="com.example.secondversion5pr.ui.fragment.BookingFragment"
         android:label="fragment_booking"
         tools:layout="@layout/fragment_booking" >
         <action
-            android:id="@+id/action_bookingFragment_to_lakesFragment2"
+            android:id="@+id/action_bookingFragment_to_lakesFragment"
             app:destination="@id/lakesFragment" />
+        <action
+            android:id="@+id/action_bookingFragment_to_riversFragment"
+            app:destination="@id/riversFragment" />
     </fragment>
     <fragment
         android:id="@+id/lakesFragment"
-        android:name="com.example.secondversion5pr.LakesFragment"
+        android:name="com.example.secondversion5pr.ui.fragment.LakesFragment"
         android:label="fragment_lakes"
         tools:layout="@layout/fragment_lakes" >
         <action
             android:id="@+id/action_lakesFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/riversFragment"
+        android:name="com.example.secondversion5pr.ui.fragment.RiversFragment"
+        android:label="fragment_rivers"
+        tools:layout="@layout/fragment_rivers">
+        <action
+            android:id="@+id/action_riversFragment_to_bookingFragment"
             app:destination="@id/bookingFragment" />
     </fragment>
 </navigation>

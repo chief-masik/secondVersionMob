@@ -1,4 +1,4 @@
-package com.example.secondversion5pr;
+package com.example.secondversion5pr.ui.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import com.example.secondversion5pr.R;
 
 public class BookingFragment extends Fragment {
     static final private String TAG = "SecondFr";
@@ -33,13 +35,23 @@ public class BookingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.fragment_booking,container,false);
 
-        Button button3 = (Button) view1.findViewById(R.id.buttonLake);
-        button3.setOnClickListener(new View.OnClickListener() {
+        Button buttonRiver = (Button) view1.findViewById(R.id.buttonRiver);
+        Button buttonLake = (Button) view1.findViewById(R.id.buttonLake);
+
+        buttonRiver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putString("name",name);
-                Navigation.findNavController(view).navigate(R.id.action_bookingFragment_to_lakesFragment2, bundle);
+                Navigation.findNavController(view).navigate(R.id.action_bookingFragment_to_riversFragment, bundle);
+            }
+        });
+        buttonLake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("name",name);
+                Navigation.findNavController(view).navigate(R.id.action_bookingFragment_to_lakesFragment, bundle);
             }
         });
 

@@ -1,4 +1,4 @@
-package com.example.secondversion5pr;
+package com.example.secondversion5pr.ui.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import com.example.secondversion5pr.R;
 
 public class AuthenticationFragment extends Fragment {
     private static final String TAG = "FirstFr";
