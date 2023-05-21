@@ -1,4 +1,4 @@
-package com.example.secondversion5pr.data.repository;
+package com.example.secondversion5pr.ui.repository;
 
 import androidx.lifecycle.LiveData;
 

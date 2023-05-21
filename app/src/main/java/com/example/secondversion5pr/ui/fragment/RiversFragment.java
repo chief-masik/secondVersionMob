@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,9 +35,17 @@ public class RiversFragment extends Fragment {
         name = getArguments().getString("name");
         Log.d(TAG,"onCreate");
     }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view1 = inflater.inflate(R.layout.fragment_rivers,container,false);
         recyclerView = (RecyclerView) view1.findViewById(R.id.RecyclerView);
+
+        // Добавление нового элемента
+        Bundle args = getArguments();
+        if (args != null && args.containsKey("IMG_RESULT_OK") && args.containsKey("NAME_RESULT_OK")) {
+            River river = new River(args.getInt("IMG_RESULT_OK"), args.getString("NAME_RESULT_OK"));
+            riverViewModel.insert(river);
+        }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -53,6 +62,14 @@ public class RiversFragment extends Fragment {
             }
         });
         recyclerView.setAdapter(riverAdapter);
+
+        Button buttonToAddRiver = view1.findViewById(R.id.buttonToAddRiver);
+        buttonToAddRiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_riversFragment_to_addRiverFragment);
+            }
+        });
 
         Toast.makeText(getContext(), "Эксклюзивный список для " + name, Toast.LENGTH_SHORT).show();
         Log.d(TAG,"onCreateView");

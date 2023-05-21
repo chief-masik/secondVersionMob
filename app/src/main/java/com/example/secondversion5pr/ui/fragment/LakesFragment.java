@@ -34,9 +34,10 @@ public class LakesFragment extends Fragment {
         name = getArguments().getString("name");
         Log.d(TAG,"onCreate");
     }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view1 = inflater.inflate(R.layout.fragment_rivers,container,false);
-        recyclerView = (RecyclerView) view1.findViewById(R.id.RecyclerView);
+        View view1 = inflater.inflate(R.layout.fragment_lakes,container,false);
+        recyclerView = (RecyclerView) view1.findViewById(R.id.LakesRecyclerView);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

@@ -43,5 +43,17 @@
         <action
             android:id="@+id/action_riversFragment_to_bookingFragment"
             app:destination="@id/bookingFragment" />
+        <action
+            android:id="@+id/action_riversFragment_to_addRiverFragment"
+            app:destination="@id/addRiverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRiverFragment"
+        android:name="com.example.secondversion5pr.ui.fragment.AddRiverFragment"
+        android:label="fragment_add_river"
+        tools:layout="@layout/fragment_add_river" >
+        <action
+            android:id="@+id/action_addRiverFragment_to_riversFragment"
+            app:destination="@id/riversFragment" />
     </fragment>
 </navigation>

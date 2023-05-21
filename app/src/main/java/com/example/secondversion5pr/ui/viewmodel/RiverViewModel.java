@@ -1,20 +1,29 @@
 package com.example.secondversion5pr.ui.viewmodel;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
+import android.app.Application;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.AndroidViewModel;
+
+import com.example.secondversion5pr.data.database.entity.RiverEntity;
 import com.example.secondversion5pr.data.model.River;
-import com.example.secondversion5pr.data.repository.RiverRepository;
+import com.example.secondversion5pr.ui.repository.RiverRepository;
 
 import java.util.List;
 
-public class RiverViewModel extends ViewModel {
+public class RiverViewModel extends AndroidViewModel {
     public LiveData<List<River>> rivers;
-    private static final RiverRepository riverRepository = new RiverRepository();
-    public RiverViewModel() {
-        initialization();
+    private RiverRepository riverRepository;
+    public RiverViewModel(Application application) {
+        super(application);
+        riverRepository = new RiverRepository(application);
+        rivers = riverRepository.getAll();
     }
-    private void initialization(){
-        rivers = riverRepository.getData();
+    public LiveData<List<River>> getAllCars() {
+        return rivers;
+    }
+
+    public void insert(River river) {
+        riverRepository.insert(new RiverEntity(river.getImage(), river.getNameItem()));
     }
 }

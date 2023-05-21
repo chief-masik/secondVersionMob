@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.secondversion5pr.data.model.Lake;
-import com.example.secondversion5pr.data.repository.LakeRepository;
+import com.example.secondversion5pr.ui.repository.LakeRepository;
 
 import java.util.List;
 
